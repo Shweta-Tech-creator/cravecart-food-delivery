@@ -67,32 +67,54 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.location_on, color: Color(0xFFFF5722), size: 14),
-                SizedBox(width: 4),
-                Text(
-                  'DELIVER TO',
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w900,
-                    color: Color(0xFFFF5722),
-                    letterSpacing: 0.8,
+                Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFF5722),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: const Icon(Icons.fastfood_rounded, color: Colors.white, size: 13),
+                ),
+                const SizedBox(width: 6),
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 17,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: -0.3,
+                    ),
+                    children: [
+                      TextSpan(text: 'Crave', style: TextStyle(color: Color(0xFF0F172A))),
+                      TextSpan(text: 'Cart', style: TextStyle(color: Color(0xFFFF5722))),
+                    ],
                   ),
                 ),
-                Icon(Icons.keyboard_arrow_down, size: 14, color: Color(0xFFFF5722)),
               ],
             ),
-            Text(
-              'Home • Thane, Maharashtra',
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w800,
-                color: Color(0xFF0F172A),
-              ),
+            const SizedBox(height: 2),
+            const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.location_on, color: Color(0xFFFF5722), size: 11),
+                SizedBox(width: 2),
+                Text(
+                  'Home • Thane, Maharashtra',
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFF64748B),
+                  ),
+                ),
+                Icon(Icons.keyboard_arrow_down, size: 12, color: Color(0xFF64748B)),
+              ],
             ),
           ],
         ),

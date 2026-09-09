@@ -8,7 +8,7 @@ import 'package:crave_cart/screens/profile_screen.dart';
 void main() {
   testWidgets('App loads and displays home dashboard with Thane address and Profile nav', (WidgetTester tester) async {
     await tester.pumpWidget(const CraveCartApp());
-    expect(find.text('DELIVER TO'), findsOneWidget);
+    expect(find.textContaining('Crave'), findsWidgets);
     expect(find.text('Home • Thane, Maharashtra'), findsOneWidget);
     expect(find.text('Explore Categories'), findsOneWidget);
     expect(find.text('Book Table'), findsOneWidget);
